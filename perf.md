@@ -278,3 +278,28 @@ Or in one sentence:
 
 > **Debugging is the process of mapping observable behavior to a failure mode, then using workload and structural reasoning to choose among multiple valid interventions—under irreducible limits of observability and knowledge.**
 
+---
+
+# Additional thouhts
+
+### 6bis. Refinement as Hypothesis-Driven Exploration
+
+> “Each time you rule out a structural explanation, you generate a new hypothesis—and thus a new metric or trace to collect.”
+
+1. **Elimination drives instrumentation.**
+
+   * When you’ve determined that, say, a missing index *cannot* be the culprit (because explain-plans show no index candidates), you know that none of your current measurements will distinguish the remaining possibilities.
+   * You then **pose a new hypothesis** (“maybe memory bandwidth is the limiter?”) and add a measurement (e.g. perf counters for cache misses) to test it.
+
+2. **Iterative failure-mode refinement.**
+
+   * Rather than expecting one pass of “CPU vs I/O vs locks,” you accept that each round of measurement both *refines* your failure mode (e.g. from `B_cpu,user` to `B_cpu,user,cache-miss`) and *prunes* the explanation set.
+   * When a refinement **no longer** meaningfully reduces the candidate list, you switch tactics (as in your original §6) to semantic or architectural reasoning.
+
+3. **Dead-end detection.**
+
+   * If several rounds of new metrics still leave you with a large explanation set, that’s a signal to pause instrumentation and bring in workload, data-layout, or business-intent knowledge—otherwise you risk an unbounded chase of ever-finer counters.
+
+
+
+
