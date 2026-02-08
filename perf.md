@@ -294,12 +294,6 @@ Or in one sentence:
 2. **Iterative failure-mode refinement.**
 
    * Rather than expecting one pass of “CPU vs I/O vs locks,” you accept that each round of measurement both *refines* your failure mode (e.g. from `B_cpu,user` to `B_cpu,user,cache-miss`) and *prunes* the explanation set.
-   * When a refinement **no longer** meaningfully reduces the candidate list, you switch tactics (as in your original §6) to semantic or architectural reasoning.
-
-3. **Dead-end detection.**
-
-   * If several rounds of new metrics still leave you with a large explanation set, that’s a signal to pause instrumentation and bring in workload, data-layout, or business-intent knowledge—otherwise you risk an unbounded chase of ever-finer counters.
-
 
 
 
