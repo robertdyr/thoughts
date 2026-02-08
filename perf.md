@@ -280,7 +280,7 @@ Or in one sentence:
 
 ---
 
-# Additional thouhts
+# Additional thoughts
 
 ### 6bis. Refinement as Hypothesis-Driven Exploration
 
