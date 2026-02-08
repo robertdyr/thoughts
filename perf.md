@@ -18,10 +18,6 @@ The core insight is simple but non-obvious:
 
 ---
 
-Absolutely—your point is spot on. Without metrics, you can’t even know that there’s something to debug. I’d suggest inserting a very brief “zeroth” step (or expanding Section 1) to make that explicit. For example:
-
----
-
 ### 0. Detecting the Problem: Metrics First
 
 > “You can’t fix what you don’t know is broken.”
