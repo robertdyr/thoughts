@@ -23,7 +23,7 @@ The core insight is simple but non-obvious:
 > “You can’t fix what you don’t know is broken.”
 
 1. **Observation precedes all.**
-   Before any semantic reasoning or domain expertise can kick in, you need hard data showing *that* you have a performance issue. Without metrics, you simply have assertions (“it feels slow”) with no grounding.
+   Before any semantic reasoning or domain expertise can kick in, you need hard data showing *that* you have a performance issue. Without metrics, you have no grounding. A metric could also be something like "user complaints about slow requests increased". 
 
 ---
 
